@@ -31,20 +31,6 @@ int main()
         cout << "What is the weight of its edge?" << endl;
         cin >> weight;
         
-        if (node > node2)
-        {
-            if (node > count)
-            {
-                count = node;
-            }
-        }
-        if (node2 > node)
-        {
-            if (node2 > count)
-            {
-                count = node2;
-            }
-        }
         
         addEdge(node, node2, weight);
         printMatrix(count);
@@ -56,9 +42,9 @@ int main()
 
 void printMatrix(int verticies)
 {
-    for (int i = 0; i <  verticies; i++)
+    for (int i = 0; i < 20; i++)
     {
-        for (int j = 0; j <  verticies; j++)
+        for (int j = 0; j < 20; j++)
         {
             cout << matrix[i][j] << " ";
         }
@@ -68,5 +54,7 @@ void printMatrix(int verticies)
 
 void addEdge(int u, int v, int weight)
 {
-    matrix[u][v] = weight;
+    // u is y and v is x
+    matrix[u-1][v-1] = weight;
+    
 }
